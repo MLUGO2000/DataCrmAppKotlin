@@ -2,12 +2,23 @@
 Prueba Tecnica Data Crm en Kotlin
 
 Realizado bajo Clean Architecture y Patron MVVM
+
 Kotlin
+
 Ktx
+
+ViewBinding 
+
+MaterialComponent (CardView,RecyclerView)
+
 Corrutinas
+
 Clean Architecture
+
 Retrofit
+
 LiveData
+
 Dagger 2
 
 # Clean Architecture
