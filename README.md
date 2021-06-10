@@ -12,7 +12,7 @@ Dagger 2
 
 # Clean Architecture
 Capas
-- UI : Se encuentra toda la logica correspondiente a las vistas ,en este caso los fragments con sus respectivos ViewModels
+- UI : Se encuentra toda la logica correspondiente a las vistas ,en este caso las actividades con sus respectivos ViewModels
 
 - Framework:  En esta capa se encontrara todo lo correspondiente al framework de Android,en este caso la libreria de Retrofit y la inyeccion de Dependencias con Dagger 2 sus Modulos y Componente 
 
