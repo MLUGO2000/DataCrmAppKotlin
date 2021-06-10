@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContact"
@@ -20,6 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:foreground="@drawable/marco_contacts"
             android:orientation="vertical"
             android:padding="10dp">
 

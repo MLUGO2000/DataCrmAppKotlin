@@ -83,12 +83,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showProgress(){
 
-        binding.loading.visibility = View.VISIBLE
+        binding.loadingLogin.visibility = View.VISIBLE
 
     }
     private fun hideProgress(){
 
-        binding.loading.visibility = View.GONE
+        binding.loadingLogin.visibility = View.GONE
     }
 
     private fun showMessage(message:String){

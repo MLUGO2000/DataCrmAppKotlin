@@ -20,6 +20,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     fun login(username: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
+            _loginResult.postValue(LoginResult.Loading())
             try {
                 val token=challenge(username)
 

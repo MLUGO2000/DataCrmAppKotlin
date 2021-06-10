@@ -16,6 +16,7 @@ class ContactsViewModel(private val repository: ContactsRepository):ViewModel() 
 
     fun getContacts(sessionName:String){
         viewModelScope.launch(Dispatchers.IO) {
+            _statusContacts.postValue(DataResult.Loading())
             try {
 
                 val result=repository.getContancts(sessionName)

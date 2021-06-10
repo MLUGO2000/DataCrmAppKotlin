@@ -62,12 +62,16 @@ class MainActivity : AppCompatActivity() {
     private fun updateUiContacts(dataResult: DataResult<List<Contact>>?) {
         when(dataResult){
 
-            is DataResult.Loading->{}
+            is DataResult.Loading->{
+                showProgress()
+            }
             is DataResult.Success->{
+                hideProgress()
                 adapterContacts.updateDataList(dataResult.data)
 
             }
             is DataResult.Failure->{
+                hideProgress()
                 showMessage(dataResult.e.message)
 
             }
@@ -76,9 +80,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun showProgress(){
 
+        binding.loadingContacts.visibility=View.VISIBLE
 
     }
     private fun hideProgress(){
+        binding.loadingContacts.visibility=View.GONE
     }
 
     private fun showMessage(message:String?){
