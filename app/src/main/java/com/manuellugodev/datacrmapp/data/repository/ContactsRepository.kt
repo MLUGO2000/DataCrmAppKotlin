@@ -6,4 +6,6 @@ import com.manuellugodev.datacrmapp.domain.vo.DataResult
 interface ContactsRepository {
 
     suspend fun getContancts(sessionName:String):DataResult<List<Contact>>
+
+    suspend fun getNumberContacts(sessionName: String):DataResult<Int>
 }

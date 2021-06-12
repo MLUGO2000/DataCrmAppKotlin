@@ -2,6 +2,7 @@ package com.manuellugodev.datacrmapp.framework.retrofit
 
 import com.manuellugodev.datacrmapp.framework.retrofit.model.LoginRequest
 import com.manuellugodev.datacrmapp.framework.retrofit.model.response.ChallegeResponse
+import com.manuellugodev.datacrmapp.framework.retrofit.model.response.ContactsCountResponse
 import com.manuellugodev.datacrmapp.framework.retrofit.model.response.ContactsResponse
 import com.manuellugodev.datacrmapp.framework.retrofit.model.response.LoginResponse
 import retrofit2.http.*
@@ -21,4 +22,11 @@ interface DataCrmApiService {
 
     @GET("webservice.php?operation=${Constans.OP_QUERY}&query=select * from Contacts;")
     suspend fun getContacts(@Query ("sessionName") session:String):ContactsResponse
+
+    @GET("webservice.php?operation=${Constans.OP_QUERY}&query=select COUNT(*) from Contacts;")
+    suspend fun getCountContacts(@Query("sessionName") session: String):ContactsCountResponse
+
+
+
+
 }

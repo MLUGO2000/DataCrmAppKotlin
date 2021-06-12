@@ -8,4 +8,7 @@ class ContactsRepositoryImpl(private val source:DataSourceContacts): ContactsRep
 
     override suspend fun getContancts(sessionName: String): DataResult<List<Contact>> =
         source.getContacts(sessionName)
+
+    override suspend fun getNumberContacts(sessionName: String): DataResult<Int> =
+        source.getCountContacts(sessionName)
 }

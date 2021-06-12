@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         if(sessionName.isNotEmpty()){
             viewModelContacts.getContacts(sessionName)
+            viewModelContacts.getNumberContacts(sessionName)
         }
 
 
@@ -54,8 +55,30 @@ class MainActivity : AppCompatActivity() {
 
         binding.RecyclerViewContacts.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         binding.RecyclerViewContacts.adapter=adapterContacts
+
         viewModelContacts.statusContacts.observe(this,::updateUiContacts)
+        viewModelContacts.statusNumberContacts.observe(this,::updateNumberContacts)
         
+
+    }
+
+    private fun updateNumberContacts(dataResult: DataResult<Int>?) {
+
+        when(dataResult){
+
+            is DataResult.Loading ->{
+                showProgress()
+            }
+            is DataResult.Failure ->{
+                hideProgress()
+                showMessage("Error tipo: ${dataResult.e.message}")
+            }
+            is DataResult.Success ->{
+                hideProgress()
+                binding.numberContacts.text=dataResult.data.toString()
+            }
+
+        }
 
     }
 
